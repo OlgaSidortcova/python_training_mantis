@@ -20,4 +20,5 @@ def test_add_project(app):# json_projects):
     assert len(projects_before) + 1 == len(projects_after)
     projects_before.append(project)
     assert sorted(projects_before, key=Project.id_or_max) == sorted(projects_after, key=Project.id_or_max)
+    app.session.logout()
 

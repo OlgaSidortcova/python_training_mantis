@@ -17,3 +17,4 @@ def test_delete_some_project(app):
     assert len(projects_before) - 1 == len(projects_after)
     projects_before.remove(project)
     assert sorted(projects_before, key=Project.id_or_max) == sorted(projects_after, key=Project.id_or_max)
+    app.session.logout()
