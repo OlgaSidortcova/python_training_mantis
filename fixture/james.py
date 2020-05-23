@@ -14,7 +14,6 @@ class JamesHelper:
         session.quit()
 
     class Session:
-
         def __init__(self, host, port, username, password):
             self.telnet = Telnet(host, port, 5)
             self.read_until("Login id:")
